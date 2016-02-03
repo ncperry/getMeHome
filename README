@@ -1,0 +1,4 @@
+To build dependencies first install carthage:
+brew install carthage
+Then checkout, but don't build the dependencies, with the following command:
+carthage update --no-build --platform iOS

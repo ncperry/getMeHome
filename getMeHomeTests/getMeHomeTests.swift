@@ -21,15 +21,15 @@ class getMeHomeTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
+    func testGetFrontrunnerRoute() {
+        let expectation = expectationWithDescription("getRoute")
+        NetworkController.getRoute(.r750) { response in
+            expectation.fulfill()
+        }
+        waitForExpectationsWithTimeout(1000.0) { error in
+            if let _ = error {
+                print("timeout error: \(error)")
+            }
         }
     }
     
